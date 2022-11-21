@@ -9,14 +9,11 @@ import {
 } from 'firebase-admin/firestore'
 import { chunk, groupBy, mapValues, sumBy } from 'lodash'
 
-import { DEV_CONFIG } from '../../common/envs/dev'
-import { PROD_CONFIG } from '../../common/envs/prod'
 import { Contract } from '../../common/contract'
 import { PrivateUser, User } from '../../common/user'
 import { Group } from '../../common/group'
 import { Post } from '../../common/post'
 import { getFunctionUrl } from '../../common/api'
-import { createClient, PostgrestError } from '@supabase/supabase-js'
 
 export const log = (...args: unknown[]) => {
   console.log(`[${new Date().toISOString()}]`, ...args)
@@ -269,18 +266,4 @@ export const getContractPath = (contract: Contract) => {
 
 export function contractUrl(contract: Contract) {
   return `https://manifold.markets/${contract.creatorUsername}/${contract.slug}`
-}
-
-export function createSupabaseClient() {
-  const url = isProd() ? PROD_CONFIG.supabaseUrl : DEV_CONFIG.supabaseUrl
-  const key = process.env.SUPABASE_ANON_KEY
-  if (url == null || key == null) {
-    return null
-  } else {
-    return createClient(url, key)
-  }
-}
-
-export function formatPostgrestError(err: PostgrestError) {
-  return `${err.code} ${err.message} - ${err.details} - ${err.hint}`
 }
