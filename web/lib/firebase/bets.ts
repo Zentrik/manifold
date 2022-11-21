@@ -4,6 +4,7 @@ import {
   query,
   where,
   orderBy,
+  OrderByDirection,
   QueryConstraint,
   limit,
   startAfter,
@@ -30,6 +31,7 @@ export type BetFilter = {
   filterRedemptions?: boolean
   filterAntes?: boolean
   afterTime?: number
+  order?: OrderByDirection
   limit?: number
 }
 
@@ -37,8 +39,11 @@ function getBetsCollection(contractId: string) {
   return collection(db, 'contracts', contractId, 'bets')
 }
 
-const getBetsQuery = (options?: BetFilter) => {
-  let q = query(collectionGroup(db, 'bets'), orderBy('createdTime'))
+export const getBetsQuery = (options?: BetFilter) => {
+  let q = query(
+    collectionGroup(db, 'bets'),
+    orderBy('createdTime', options?.order)
+  )
   if (options?.contractId) {
     q = query(q, where('contractId', '==', options.contractId))
   }
