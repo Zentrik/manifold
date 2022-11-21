@@ -33,7 +33,7 @@ export default async function handler(
   } else {
     const [contract, bets, comments] = await Promise.all([
       getContractFromId(contractId),
-      listAllBets(contractId),
+      listAllBets({ contractId }),
       listAllComments(contractId),
     ])
 

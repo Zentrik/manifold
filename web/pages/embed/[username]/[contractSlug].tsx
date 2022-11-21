@@ -35,7 +35,7 @@ export async function getStaticPropz(props: {
     filterRedemptions: true,
     filterChallenges: true,
   }
-  const bets = contractId ? await listAllBets(contractId, opts) : []
+  const bets = contractId ? await listAllBets({ contractId, ...opts }) : []
 
   return {
     props: { contract, bets },

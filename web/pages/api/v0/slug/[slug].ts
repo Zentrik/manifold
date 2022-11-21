@@ -20,7 +20,7 @@ export default async function handler(
   }
 
   const [bets, comments] = await Promise.all([
-    listAllBets(contract.id),
+    listAllBets({ contractId: contract.id }),
     listAllComments(contract.id),
   ])
 
