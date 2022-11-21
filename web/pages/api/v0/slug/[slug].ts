@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { applyCorsHeaders, CORS_UNRESTRICTED } from 'web/lib/api/cors'
-import { listAllBets } from 'web/lib/firebase/bets'
+import { listBets } from 'web/lib/firebase/bets'
 import { listAllComments } from 'web/lib/firebase/comments'
 import { getContractFromSlug } from 'web/lib/firebase/contracts'
 import { FullMarket, ApiError, toFullMarket } from '../_types'
@@ -20,7 +20,7 @@ export default async function handler(
   }
 
   const [bets, comments] = await Promise.all([
-    listAllBets({ contractId: contract.id }),
+    listBets({ contractId: contract.id }),
     listAllComments(contract.id),
   ])
 
