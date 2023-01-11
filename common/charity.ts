@@ -340,7 +340,7 @@ We want to take a proactive approach to managing the welfare benefits, threats, 
 
 Without sufficient public interest or research activity, solutions to the problems wild animals face will go undiscovered. 
 
-Wild Animal Initiative currently focuses on helping scientists, grantors, and decision-makers investigate important and understudied questions about wild animal welfare. Our work catalyzes research and applied projects that will open the door to a clearer picture of wild animals’ needs and how to enhance their well-being. Ultimately, we envision a world in which people actively choose to help wild animals — and have the knowledge they need to do so responsibly.`,
+Wild Animal Initiative currently focuses on helping scientists, grantors, and decision-makers investigate important and understudied questions about wild ifare. Our work catalyzes research and applied projects that will open the door to a clearer picture of wild animals’ needs and how to enhance their well-being. Ultimately, we envision a world in which people actively choose to help wild animals — and have the knowledge they need to do so responsibly.`,
   },
   {
     name: 'FYXX Foundation',
@@ -817,6 +817,19 @@ Around the world, 32.6 million people are using a method of contraception provid
 The organization's core services include family planning; safe abortion and post-abortion care; maternal and child health care, including safe delivery and obstetrics; diagnosis and treatment of sexually transmitted infections; and HIV/AIDS prevention.
 
 The organization reports for the year 2021 to have prevented 14.1 million unintended pregnancies, averted 6.6 million unsafe abortions, and saved 39,000 women's lives.`,
+    tags: ['New'] as const,
+  },
+  {
+    name: 'Fish Welfare Initiative',
+    website: 'https://www.fishwelfareinitiative.org/',
+    photo: 'https://i.imgur.com/gd8O71v.png',
+    preview: `Fish Welfare Initiative's mission is to improve the welfare of fish as much as possible, focusing specifically on farmed fish.`,
+    description: `Fish Welfare Initiative is a startup organization whose mission is to improve the welfare of fish as much as possible. They focus specifically on farmed fish, i.e., fish raised in aquaculture.
+    
+    They collaborate with corporations, governments, and producers to improve fish welfare standards and practices with a simple broad approach: researching the most promising ways of improving fish welfare, and then enabling stakeholders to do so. 
+    Following their initial research, their team now partners with NGOs to help farmers introduce higher welfare farming methods in the second-highest fish producing country in the world, India.
+    
+    As of December 30 2022, they have potentially helped 1.14 and 1.4 million fish and shrimp respectively, with every $1 potentially helping 1.3 fish and every $100 13 fish.`,
     tags: ['New'] as const,
   },
 ].map((charity) => {
